@@ -1,12 +1,12 @@
 namespace Patrones.FactoryMethod.Notificaciones{
 
-public class SmsNotificacion : INotificacion
+public class WhatsAppNotificacion : INotificacion
     {
   
 
         public void Enviar()
         {
-            Console.WriteLine("Enviando SMS...");
+            Console.WriteLine("Enviando mensaje de WhatsApp...");
         }
     }
 }

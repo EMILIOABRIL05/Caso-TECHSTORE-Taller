@@ -1,4 +1,5 @@
 ﻿using core;
+using Patrones.FactoryMethod.Notificaciones;
 using TechStore.Patrones.FactoryMethod.Notificaciones;
 
 namespace TechStore
@@ -21,6 +22,10 @@ namespace TechStore
            NotificacionFactory smsFactory = new SmsFactory();
 
            servicio.CrearPedido("Juan", "Laptop", 1500.00m, smsFactory, "normal", "Calle 123");
+           Console.WriteLine("\n[Ejemplo 3: Notificación por WhatsApp]");
+           NotificacionFactory whatsAppFactory = new WhatsAppFactory();
+
+           servicio.CrearPedido("Juan", "Laptop", 1500.00m, whatsAppFactory, "normal", "Calle 123");
         }
     }
 }

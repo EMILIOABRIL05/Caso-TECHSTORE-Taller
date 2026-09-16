@@ -6,7 +6,7 @@ public class EmailNotificacion : INotificacion
 
         public void Enviar()
         {
-            Console.WriteLine("Enviando correo");
+            Console.WriteLine("Enviando correo...");
         }
     }
 }

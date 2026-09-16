@@ -12,3 +12,4 @@ C:\Users\emilio\Documents\5° Semestre\Patrones de Software\Caso-TECHSTORE\TechS
 C:\Users\emilio\Documents\5° Semestre\Patrones de Software\Caso-TECHSTORE\TechStore\obj\Debug\net10.0\TechStore.pdb
 C:\Users\emilio\Documents\5° Semestre\Patrones de Software\Caso-TECHSTORE\TechStore\obj\Debug\net10.0\TechStore.genruntimeconfig.cache
 C:\Users\emilio\Documents\5° Semestre\Patrones de Software\Caso-TECHSTORE\TechStore\obj\Debug\net10.0\ref\TechStore.dll
+C:\Users\emilio\Documents\5° Semestre\Patrones de Software\Caso-TECHSTORE\TechStore\obj\Debug\net10.0\TechStore.sourcelink.json
