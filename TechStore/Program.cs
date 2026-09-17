@@ -2,6 +2,9 @@
 using TechStore.Patrones.FactoryMethod.Notificaciones;
 using TechStore.Patrones.FactoryMethod.Reportes;
 using TechStore.Patrones.FactoryMethod.Pagos;
+using TechStore.Patrones.Builder;
+using TechStore.Core;
+using System.Text;
 
 namespace TechStore
 {
@@ -59,7 +62,30 @@ namespace TechStore
             PagoFactory factoryEfectivo = new PagoEfectivoFactory();
             IPago pagoEfectivo = factoryEfectivo.CrearPago();
             pagoEfectivo.Procesar(montoEjemplo);
-           
+
+            Console.WriteLine("\n--- EJERCICIO 5: Builder (Pedido paso a paso) ---");
+
+            Console.WriteLine("\n[Pedido mínimo: solo datos obligatorios]");
+            Pedido pedidoMinimo = new PedidoBuilder()
+            .ConCliente("Ana")
+            .ConProducto("Libro")
+            .ConPrecio(50)
+            .Construir();
+
+            Console.WriteLine(pedidoMinimo);
+
+            Console.WriteLine("\n[Pedido completo: todos los campos disponibles]");
+            Pedido pedidoCompleto = new PedidoBuilder()
+            .ConCliente("Ana")
+            .ConProducto("Libro")
+            .ConPrecio(50)
+            .ConDireccion("Ambato")
+            .ConTelefono("09999999")
+            .ConEntrega("EXPRESS")
+            .RequiereFactura()
+            .Construir();
+
+            Console.WriteLine(pedidoCompleto);
         }
     }
 }
