@@ -64,7 +64,7 @@ namespace TechStore
             pagoEfectivo.Procesar(montoEjemplo);
 
             Console.WriteLine("\n--- EJERCICIO 5: Builder (Pedido paso a paso) ---");
-
+             Console.WriteLine("\n--- EJERCICIO 6: Builder (Pedido minimo y completo) ---");
             Console.WriteLine("\n[Pedido mínimo: solo datos obligatorios]");
             Pedido pedidoMinimo = new PedidoBuilder()
             .ConCliente("Ana")
@@ -86,6 +86,32 @@ namespace TechStore
             .Construir();
 
             Console.WriteLine(pedidoCompleto);
+
+            Console.WriteLine("\n--- EJERCICIO 7: Builder (Computadora) ---");
+
+            Console.WriteLine("\n[Computadora de oficina]");
+            Computadora computadoraOficina = new ComputadoraBuilder()
+            .ConProcesador("Intel i5")
+            .ConRam(16)
+            .ConDisco(512)
+            .ConTarjetaGrafica("Gráficos integrados")
+            .ConSistemaOperativo("Windows 11 Home")
+            .ConWifi()
+            .Construir();
+
+            Console.WriteLine(computadoraOficina);
+
+            Console.WriteLine("\n[Computadora gaming]");
+            Computadora computadoraGaming = new ComputadoraBuilder()
+            .ConProcesador("Ryzen 7")
+            .ConRam(32)
+            .ConDisco(1000)
+            .ConTarjetaGrafica("RTX 4070")
+            .ConSistemaOperativo("Windows 11 Pro")
+            .ConWifi()
+            .Construir();
+
+            Console.WriteLine(computadoraGaming);
         }
     }
 }
