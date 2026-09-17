@@ -1,12 +1,9 @@
-using Patrones.FactoryMethod.Notificaciones;
-namespace TechStore.Patrones.FactoryMethod.Notificaciones
+namespace TechStore.Patrones.FactoryMethod.Notificaciones;
+
+public class EmailFactory : NotificacionFactory
 {
-    
-    public class EmailFactory : NotificacionFactory
+    public override INotificacion CrearNotificacion()
     {
-        public override INotificacion CrearNotificacion()
-        {
-            return new EmailNotificacion();
-        }
+        return new EmailNotificacion();
     }
 }

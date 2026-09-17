@@ -1,8 +1,6 @@
 
+namespace TechStore.Patrones.FactoryMethod.Notificaciones;
 
-using TechStore.Patrones.FactoryMethod.Notificaciones;
-namespace Patrones.FactoryMethod.Notificaciones
-{
 public class WhatsAppFactory : NotificacionFactory
 {
     public override INotificacion CrearNotificacion()
@@ -10,5 +8,4 @@ public class WhatsAppFactory : NotificacionFactory
         return new WhatsAppNotificacion();
     }
 
-}
 }

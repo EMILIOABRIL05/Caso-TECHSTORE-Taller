@@ -1,7 +1,7 @@
 ﻿using core;
-using Patrones.FactoryMethod.Notificaciones;
 using TechStore.Patrones.FactoryMethod.Notificaciones;
 using TechStore.Patrones.FactoryMethod.Reportes;
+using TechStore.Patrones.FactoryMethod.Pagos;
 
 namespace TechStore
 {
@@ -44,8 +44,21 @@ namespace TechStore
             ReporteFactory factoryCsv = new ReporteCsvFactory();
             IReporte reporteCsv = factoryCsv.GenerarReporte();
             reporteCsv.Reportar();
-                    
-           
+
+            Console.WriteLine("\n--- EJERCICIO 4: Factory Method (Métodos de Pago) ---");
+            decimal montoEjemplo = 1250.50m;
+
+            PagoFactory factoryTarjeta = new PagoTarjetaFactory();
+            IPago pagoTarjeta = factoryTarjeta.CrearPago();
+            pagoTarjeta.Procesar(montoEjemplo);
+
+            PagoFactory factoryTransferencia = new PagoTransferenciaFactory();
+            IPago pagoTransferencia = factoryTransferencia.CrearPago();
+            pagoTransferencia.Procesar(montoEjemplo);
+
+            PagoFactory factoryEfectivo = new PagoEfectivoFactory();
+            IPago pagoEfectivo = factoryEfectivo.CrearPago();
+            pagoEfectivo.Procesar(montoEjemplo);
            
         }
     }

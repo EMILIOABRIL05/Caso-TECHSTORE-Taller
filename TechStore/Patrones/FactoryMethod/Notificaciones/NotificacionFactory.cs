@@ -1,14 +1,7 @@
-namespace TechStore.Patrones.FactoryMethod.Notificaciones
+namespace TechStore.Patrones.FactoryMethod.Notificaciones;
+
+public abstract class NotificacionFactory
 {
-    
-
-    public abstract class NotificacionFactory
-    {
-        public abstract INotificacion CrearNotificacion();
-
-
-    }
-
-
+    public abstract INotificacion CrearNotificacion();
 
 }
