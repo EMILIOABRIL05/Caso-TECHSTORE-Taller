@@ -1,10 +1,9 @@
 ﻿using core;
+using TechStore.Core;
+using TechStore.Patrones.Builder;
 using TechStore.Patrones.FactoryMethod.Notificaciones;
 using TechStore.Patrones.FactoryMethod.Reportes;
 using TechStore.Patrones.FactoryMethod.Pagos;
-using TechStore.Patrones.Builder;
-using TechStore.Core;
-using System.Text;
 
 namespace TechStore
 {
@@ -112,6 +111,30 @@ namespace TechStore
             .Construir();
 
             Console.WriteLine(computadoraGaming);
+
+            Console.WriteLine("\n--- EJERCICIO 8: Builder (Paquete de Entrega) ---");
+
+            PaqueteEntrega paqueteNormal = new PaqueteEntregaBuilder()
+                .ConTipoCaja("Caja estándar")
+                .ConProteccion("Burbuja")
+                .ConSeguro(false)
+                .ConEtiquetaFragil(false)
+                .ConObservacion("Entrega normal")
+                .Construir();
+
+            PaqueteEntrega paquetePremium = new PaqueteEntregaBuilder()
+                .ConTipoCaja("Caja premium reforzada")
+                .ConProteccion("Espuma + burbuja")
+                .ConSeguro(true)
+                .ConEtiquetaFragil(true)
+                .ConObservacion("Entrega prioritaria con seguimiento")
+                .Construir();
+
+            Console.WriteLine("\n[Paquete NORMAL]");
+            Console.WriteLine(paqueteNormal);
+
+            Console.WriteLine("\n[Paquete PREMIUM]");
+            Console.WriteLine(paquetePremium);
         }
     }
 }
