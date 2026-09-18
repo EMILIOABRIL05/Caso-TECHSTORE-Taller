@@ -4,6 +4,7 @@ using TechStore.Patrones.Builder;
 using TechStore.Patrones.FactoryMethod.Notificaciones;
 using TechStore.Patrones.FactoryMethod.Reportes;
 using TechStore.Patrones.FactoryMethod.Pagos;
+using TechStore.Patrones.Singleton;
 
 namespace TechStore
 {
@@ -135,6 +136,21 @@ namespace TechStore
 
             Console.WriteLine("\n[Paquete PREMIUM]");
             Console.WriteLine(paquetePremium);
+
+
+            Console.WriteLine("\n--- EJERCICIO 9: Singleton (Bitácora única del sistema) ---");
+
+        
+            Bitacora.Instancia.Registrar("Pedido de Ana (Libro) creado correctamente.");
+            Bitacora.Instancia.Registrar("Computadora gaming configurada y lista.");
+            Bitacora.Instancia.Registrar("Paquete PREMIUM preparado para envío.");
+
+            var refBitacora1 = Bitacora.Instancia;
+            var refBitacora2 = Bitacora.Instancia;
+            Console.WriteLine("¿Es la misma instancia en todo el programa? "
+                + ReferenceEquals(refBitacora1, refBitacora2));
         }
     }
 }
+
+ 
