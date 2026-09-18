@@ -37,6 +37,12 @@ public class PedidoBuilder
         _pedido.Telefono = telefono;
         return this;
     }
+
+    public PedidoBuilder ConObservacion(string observacion)
+    {
+        _pedido.Observacion = observacion;
+        return this;
+    }
     public PedidoBuilder ConEntrega(string tipoEntrega)
     {
         _pedido.TipoEntrega=tipoEntrega;

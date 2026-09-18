@@ -87,6 +87,7 @@ namespace TechStore
             .ConPrecio(50)
             .ConDireccion("Ambato")
             .ConTelefono("09999999")
+            .ConObservacion("Entregar en horario de oficina")
             .ConEntrega("EXPRESS")
             .RequiereFactura()
             .Construir();
@@ -316,7 +317,7 @@ namespace TechStore
 
         static void MenuPrincipal()
         {
-            Console.Clear();
+            LimpiarConsola();
 
             while (true)
             {
@@ -372,7 +373,19 @@ namespace TechStore
 
                 Console.WriteLine("\nPresione ENTER para volver al menú...");
                 Console.ReadLine();
+                LimpiarConsola();
+            }
+        }
+
+        static void LimpiarConsola()
+        {
+            try
+            {
                 Console.Clear();
+            }
+            catch (IOException)
+            {
+                // La consola no está disponible (ej. salida redirigida); se omite la limpieza.
             }
         }
 
